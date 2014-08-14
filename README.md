@@ -1,0 +1,4 @@
+avsay
+=====
+
+Avsay quote generator
