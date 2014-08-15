@@ -36,15 +36,20 @@ sys.path.insert(0, './oauthlib')
 
 from birdy.twitter import UserClient
 
-def twitterpost(consumer_key, consumer_secret,
-                access_token, access_token_secret, message):
+def twitterpost(consumer_key,consumer_secret,access_token,
+                access_token_secret,message):
     """ Post Twitter message """
     client = UserClient(consumer_key,
                         consumer_secret,
                         access_token,
                         access_token_secret)
 
-    response = client.api.statuses.update.post(status=message)
+    try:
+        client.api.statuses.update.post(status=message)
+    except:
+        print "Couldn't Post"
+    else:
+        print "OK!"
 
 def avsay():
     """Random Av phrase generator"""
@@ -76,17 +81,15 @@ def avsay():
     return quote
 
 if __name__ == "__main__":
-    unparsed_config = ConfigParser.ConfigParser(allow_no_value=True)
+    config = ConfigParser.ConfigParser(allow_no_value=True)
     try:
         with open(configfile):
-            unparsed_config.read(configfile)
-            # pylint: disable=W0212
-            config = unparsed_config._sections
+            config.read(configfile)
     except IOError:
         print "Could not read config file %s, exiting" % configfile
         sys.exit(1)
-    twitterpost(config['twitter']['consumer_key'],
-                config['twitter']['consumer_secret'],
-                config['twitter']['access_token'],
-                config['twitter']['access_token_secret'],
+    twitterpost(config.get('twitter','consumer_key'),
+                config.get('twitter','consumer_secret'),
+                config.get('twitter','access_token'),
+                config.get('twitter','access_token_secret'),
                 avsay())
