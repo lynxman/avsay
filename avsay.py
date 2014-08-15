@@ -44,6 +44,7 @@ def twitterpost(consumer_key,consumer_secret,access_token,
                         access_token,
                         access_token_secret)
 
+    print message
     try:
         client.api.statuses.update.post(status=message)
     except:
