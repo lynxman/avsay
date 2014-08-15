@@ -1,0 +1,9 @@
+[submodule "birdy"]
+	path = birdy
+	url = git@github.com:inueni/birdy.git
+[submodule "requests-oauthlib"]
+	path = requests-oauthlib
+	url = git@github.com:requests/requests-oauthlib.git
+[submodule "oauthlib"]
+	path = oauthlib
+	url = git@github.com:idan/oauthlib.git
