@@ -56,7 +56,7 @@ def avsay():
     random.seed()
     avstrings = [
         ['Sorry guys', 'Need to run', 'I\'m off', 'brb', 'afk for a bit',
-         'hold on', 'back in a bit'],
+         'Hold on', 'Back in a bit'],
         ['need to', 'going to', 'have to'],
         ['go to shops', 'let dogs out', 'wipe jam off my knees',
          'bail out the basement', 'clean up', 'drain the pool', 'cook dinner',
