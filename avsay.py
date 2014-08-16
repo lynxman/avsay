@@ -27,12 +27,12 @@ __version__ = '0.0.1'
 configfile = "avsay.conf"
 
 import random
-import sys
+import os, sys
 import ConfigParser
 
-sys.path.insert(0, './birdy')
-sys.path.insert(0, './requests-oauthlib')
-sys.path.insert(0, './oauthlib')
+sys.path.append(os.path.join(os.path.dirname(__file__), "birdy"))
+sys.path.append(os.path.join(os.path.dirname(__file__), "requests-oauthlib"))
+sys.path.append(os.path.join(os.path.dirname(__file__), "oauthlib"))
 
 from birdy.twitter import UserClient
 
