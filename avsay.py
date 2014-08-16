@@ -34,6 +34,8 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "birdy"))
 sys.path.append(os.path.join(os.path.dirname(__file__), "requests-oauthlib"))
 sys.path.append(os.path.join(os.path.dirname(__file__), "oauthlib"))
 
+configfile = os.path.join(os.path.dirname(__file__), "avsay.conf")
+
 from birdy.twitter import UserClient
 
 def twitterpost(consumer_key,consumer_secret,access_token,
